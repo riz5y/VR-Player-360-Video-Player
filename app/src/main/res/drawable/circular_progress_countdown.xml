@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <!-- Rotate adjustments lock the origin tracking sequence starting dead-center top at -90 degrees -->
+        <rotate
+            android:fromDegrees="-90"
+            android:toDegrees="-90">
+
+            <shape
+                android:shape="ring"
+                android:thickness="4dp"
+                android:useLevel="true">
+
+                <!-- Electric Cyan high contrast visibility tracking layout color state -->
+                <solid android:color="#00E6FF" />
+
+            </shape>
+        </rotate>
+    </item>
+</layer-list>

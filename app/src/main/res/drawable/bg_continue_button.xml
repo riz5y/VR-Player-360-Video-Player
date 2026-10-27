@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Bright blue gradient button — matches app accent #3C8CEF -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="0"
+                android:startColor="#2A7ADE"
+                android:endColor="#1A6BC9"
+                android:type="linear" />
+            <corners android:radius="32dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="0"
+                android:startColor="#3C8CEF"
+                android:endColor="#DAE639"
+                android:type="linear" />
+            <corners android:radius="32dp" />
+        </shape>
+    </item>
+</selector>

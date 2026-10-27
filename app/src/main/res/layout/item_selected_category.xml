@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="4dp"
+    android:paddingBottom="16dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="#33FFFFFF"
+        app:cardBackgroundColor="#0D101E">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+            <!-- Dynamic Video Thumbnail -->
+            <ImageView
+                android:id="@+id/imgCategoryThumb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <!-- Loading Spinner -->
+            <ProgressBar
+                android:id="@+id/thumbLoader"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                android:indeterminateTint="@color/white" />
+
+            <!-- Play Button in center -->
+            <ImageView
+                android:id="@+id/ivPlayIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_play_glass_circle"
+                android:src="@drawable/ic_play"
+                android:padding="11dp"
+                android:scaleType="centerInside" />
+
+            <!-- 360° Badge top-right -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:layout_margin="12dp"
+                android:background="@drawable/bg_360_badge"
+                android:paddingStart="10dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="3dp"
+                android:text="360°"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/playbold" />
+
+            <!-- PRO Lock Badge top-start for Paid Modules -->
+            <LinearLayout
+                android:id="@+id/proBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_gravity="top|start"
+                android:layout_margin="12dp"
+                android:background="@drawable/bg_pro_badge"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="5dp"
+                android:paddingEnd="7dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_pro_crown" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:fontFamily="@font/playbold"
+                    android:text="PRO"
+                    android:textColor="#FF241900"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <!-- Bottom overlay: Title + Duration inside gradient -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/bg_scrim_bottom_card"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|bottom"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvVideoTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/playbold"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text="Video Title"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tvVideoActionHint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/playregular"
+                        android:text="Tap to view details"
+                        android:textColor="#D6D3DC"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvVideoDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_duration_pill"
+                    android:paddingStart="10dp"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="3dp"
+                    android:text="02:35"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/playregular" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

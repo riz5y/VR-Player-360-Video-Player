@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <!-- Semi-transparent solid white core anchor center -->
+    <solid android:color="#99FFFFFF"/>
+
+    <!-- Explicit canvas constraints boundary footprint -->
+    <size
+        android:width="6dp"
+        android:height="6dp"/>
+</shape>

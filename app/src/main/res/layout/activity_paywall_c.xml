@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0816">
+
+    <!-- Hero image (top ~45%) -->
+    <ImageView
+        android:id="@+id/paywallBackgroundImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/inappcnewbg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline" />
+
+    <!-- Gradient fade -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_paywall_fade"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline" />
+
+    <!-- Close button (top-right) -->
+    <ImageView
+        android:id="@+id/cross"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/ic_cancel_circle"
+        android:padding="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Close"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Guideline at 42% -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.42" />
+
+    <!-- Hidden compat views for binding -->
+    <View android:id="@+id/monthly"      android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+    <View android:id="@+id/lifeTime"     android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+    <TextView android:id="@+id/titleMonthlyPrice" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+    <TextView android:id="@+id/lifeTimePrice"     android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+    <TextView android:id="@+id/title2"            android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Scrollable content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="24dp">
+
+            <!-- "Go Premium 👑" -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nicomojiregular"
+                android:text="Go Premium 👑"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="6dp"
+                android:text="Enjoy all features without any restrictions"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:fontFamily="@font/montserratmedium"
+                android:gravity="center" />
+
+            <!-- Feature bullets -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="30dp"
+                android:orientation="vertical">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:layout_marginBottom="10dp">
+                    <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/whiittetick" app:tint="#3C8CEF" android:background="@drawable/bg_check_circle" android:padding="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Remove Ads" android:textColor="#FFFFFF" android:textSize="15sp" android:fontFamily="@font/montserratmedium"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:layout_marginBottom="10dp">
+                    <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/whiittetick" app:tint="#3C8CEF" android:background="@drawable/bg_check_circle" android:padding="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Access All Features" android:textColor="#FFFFFF" android:textSize="15sp" android:fontFamily="@font/montserratmedium"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:layout_marginBottom="10dp">
+                    <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/whiittetick" app:tint="#3C8CEF" android:background="@drawable/bg_check_circle" android:padding="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Unlimited Downloads" android:textColor="#FFFFFF" android:textSize="15sp" android:fontFamily="@font/montserratmedium"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/whiittetick" app:tint="#3C8CEF" android:background="@drawable/bg_check_circle" android:padding="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Fast Response" android:textColor="#FFFFFF" android:textSize="15sp" android:fontFamily="@font/montserratmedium"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Weekly plan card -->
+            <FrameLayout
+                android:id="@+id/weeklyPlan"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_feature_grid"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_marginStart="20dp"
+                    android:text="Weekly"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/montserratbold" />
+
+                <TextView
+                    android:id="@+id/weekly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="20dp"
+                    android:text="Rs 550"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/montserratbold" />
+            </FrameLayout>
+
+            <!-- 3 Day Free Trial text -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="3 Day Free Trial Then Weekly Rs 550"
+                android:textColor="#C0ACAC"
+                android:textSize="13sp"
+                android:fontFamily="@font/montserratbold" />
+
+            <!-- Gradient CTA "Try Free" button -->
+            <TextView
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_gradient_cta"
+                android:gravity="center"
+                android:text="Try Free Rs 0.00"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:fontFamily="@font/montserratbold"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- No Payment Now / disclaimer -->
+            <TextView
+                android:id="@+id/mainText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="No payment now. Cancel anytime from Google Play."
+                android:textColor="#EDEAEA"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:fontFamily="@font/montserratmedium" />
+
+            <!-- Cancel / Restore link -->
+            <TextView
+                android:id="@+id/restoreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="6dp"
+                android:text="No Payment Now"
+                android:textColor="#EDEAEA"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:fontFamily="@font/montserratmedium"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,100 @@
+<LinearLayout
+xmlns:app="http://schemas.android.com/apk/res-auto"     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:elevation="@dimen/_5sdp"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="24dp"
+    android:background="@drawable/bg_reward_dialog">
+    <ImageView
+xmlns:app="http://schemas.android.com/apk/res-auto"         android:id="@+id/closebtnreward"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:src="@drawable/ic_cancel_circle"
+        app:tint="#30343B"
+        android:padding="3dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Close"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_gravity="end"/>
+    <!-- Arc "Streak Reward!" text at top -->
+    <TextView
+xmlns:app="http://schemas.android.com/apk/res-auto"         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YOUR CONSISTENCY PAID OFF"
+        android:textColor="#8A5A00"
+        android:textSize="11sp"
+        android:fontFamily="@font/playbold"
+        android:letterSpacing="0.05"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Medal image -->
+    <ImageView
+xmlns:app="http://schemas.android.com/apk/res-auto"         android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/streak"
+        android:layout_marginTop="4dp"
+        android:scaleType="centerInside"/>
+
+    <!-- 7 Day Streak Complete! -->
+    <TextView
+xmlns:app="http://schemas.android.com/apk/res-auto"         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3-day streak complete!"
+        android:textColor="#17191D"
+        android:textSize="21sp"
+        android:fontFamily="@font/playbold"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Subtitle -->
+    <TextView
+xmlns:app="http://schemas.android.com/apk/res-auto"         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You showed up for three days in a row.\nEnjoy 7 days of VIP access, ad-free."
+        android:textColor="#4B5563"
+        android:fontFamily="@font/playregular"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.3"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Day checkmark dots row -->
+    <LinearLayout
+xmlns:app="http://schemas.android.com/apk/res-auto"         android:id="@+id/llDayDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Progress bar — full orange -->
+    <ProgressBar
+xmlns:app="http://schemas.android.com/apk/res-auto"         android:id="@+id/rewardProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="10dp"
+        android:max="7"
+        android:progress="7"
+        android:progressTint="@color/accent_gold"
+        android:progressBackgroundTint="#E1E3E6"/>
+
+    <!-- Claim button — dark teal -->
+    <Button
+xmlns:app="http://schemas.android.com/apk/res-auto"         android:id="@+id/btnClaimReward"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:text="Unlock my 7 VIP days"
+        android:backgroundTint="@color/accent_gold"
+        android:textColor="#0A0816"
+        android:textSize="16sp"
+        android:fontFamily="@font/playbold"
+        android:textAllCaps="false"
+        android:stateListAnimator="@null"/>
+
+</LinearLayout>

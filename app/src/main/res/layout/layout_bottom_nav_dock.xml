@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="@drawable/bg_bottom_nav_dock"
+    android:elevation="12dp"
+    android:orientation="horizontal">
+
+    <!-- Home -->
+    <LinearLayout
+        android:id="@+id/navHome"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="18dp">
+
+        <ImageView
+            android:id="@+id/ivNavHome"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_nav_home"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tvNavHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/playregular"
+            android:gravity="center"
+            android:text="Home"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!-- Meditation -->
+    <LinearLayout
+        android:id="@+id/navMeditation"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="14dp">
+
+        <ImageView
+            android:id="@+id/ivNavMeditation"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_nav_meditation"
+            app:tint="#C1B3B3" />
+
+        <TextView
+            android:id="@+id/tvNavMeditation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/playregular"
+            android:gravity="center"
+            android:lineSpacingExtra="0dp"
+            android:text="VR&#10;Meditation"
+            android:textColor="#C1B3B3"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!-- Roller Coaster (with crown badge) -->
+    <FrameLayout
+        android:id="@+id/navRollerCoaster"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="14dp">
+
+            <ImageView
+                android:id="@+id/ivNavRollerCoaster"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_nav_roller"
+                app:tint="#C1B3B3" />
+
+            <TextView
+                android:id="@+id/tvNavRollerCoaster"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/playregular"
+                android:gravity="center"
+                android:lineSpacingExtra="0dp"
+                android:text="VR Roller&#10;Coaster"
+                android:textColor="#C1B3B3"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Crown badge top-right -->
+        <ImageView
+            android:id="@+id/ivCrownRoller"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="8dp"
+            android:elevation="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_vip_crown_badge" />
+    </FrameLayout>
+
+    <!-- Jurassic (with crown badge) -->
+    <FrameLayout
+        android:id="@+id/navJurassic"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="14dp">
+
+            <ImageView
+                android:id="@+id/ivNavJurassic"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_nav_jurassic"
+                app:tint="#C1B3B3" />
+
+            <TextView
+                android:id="@+id/tvNavJurassic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/playregular"
+                android:gravity="center"
+                android:lineSpacingExtra="0dp"
+                android:text="VR Jurassic&#10;Park"
+                android:textColor="#C1B3B3"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Crown badge top-right -->
+        <ImageView
+            android:id="@+id/ivCrownJurassic"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="8dp"
+            android:elevation="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_vip_crown_badge" />
+    </FrameLayout>
+
+</LinearLayout>

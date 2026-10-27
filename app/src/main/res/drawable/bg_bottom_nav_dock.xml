@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CSS: background:#1B1A1D; border-radius: 51px 51px 20px 20px (topLeft topRight botRight botLeft) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#1B1A1D" />
+    <corners
+        android:topLeftRadius="51dp"
+        android:topRightRadius="51dp"
+        android:bottomRightRadius="20dp"
+        android:bottomLeftRadius="20dp" />
+</shape>

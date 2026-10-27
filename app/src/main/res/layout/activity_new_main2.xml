@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0816"
+    tools:context=".Main.NewMainActivity">
+
+    <!-- Top Header: "VR PLAYER" Play Bold 26sp + Settings + PRO badge -->
+    <include
+        android:id="@+id/layoutHeader"
+        layout="@layout/layout_header"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="always"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+        app:layout_constraintBottom_toTopOf="@id/bannerAd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="27dp"
+            android:paddingBottom="16dp">
+
+            <!-- 1. Hero Card: Explore VR Videos — 320x140dp, border-radius 20dp -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Vrvideos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:stateListAnimator="@animator/home_card_feedback"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="#132B5B">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!-- Background Artwork -->
+                        <ImageView
+                            android:id="@+id/ivExploreBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bg_card_explore_vr"
+                            android:importantForAccessibility="no" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_home_hero_scrim"
+                            android:importantForAccessibility="no" />
+
+                        <!-- Left Text Content matching Figma CSS -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="8dp">
+
+                            <!-- "Explore VR Videos" Play Bold 20sp -->
+                            <TextView
+                                android:id="@+id/tvMainTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/playbold"
+                                android:text="Explore VR\nVideos"
+                                android:textColor="#FFFFFF"
+                                android:textSize="20sp"
+                                android:lineSpacingExtra="2dp" />
+
+                            <!-- "Watch immersive 360° videos in VR." Play Regular 12sp -->
+                            <TextView
+                                android:id="@+id/tvDescription"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:fontFamily="@font/playregular"
+                                android:text="Watch immersive 360°\nvideos in VR."
+                                android:textColor="#EDEAEA"
+                                android:textSize="12sp"
+                                android:lineSpacingExtra="1dp" />
+
+                            <!-- "Explore Now" Pill Button 80x24dp, border-radius 30dp -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="24dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/bg_glass_pill"
+                                android:fontFamily="@font/playbold"
+                                android:gravity="center"
+                                android:paddingStart="14dp"
+                                android:paddingEnd="14dp"
+                                android:text="Explore Now"
+                                android:textColor="#FFFFFF"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                    </FrameLayout>
+                </androidx.cardview.widget.CardView>
+
+                <FrameLayout
+                    android:id="@+id/btnFloatingGift"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:contentDescription="View VIP offer"
+                    android:elevation="10dp"
+                    android:focusable="true"
+                    android:padding="3dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_floating_giftbox" />
+
+                    <FrameLayout
+                        android:id="@+id/btnDismissFloatingGift"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="top|end"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:contentDescription="Dismiss gift offer"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="top|end"
+                            android:background="@drawable/bg_circle_dark"
+                            android:contentDescription="@null"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_cancel_circle" />
+                    </FrameLayout>
+                </FrameLayout>
+            </FrameLayout>
+
+            <!-- Relative anchor for row 2 (two-column cards) -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+                <!-- 2. Two Column Grid: VR Cinema & VR Gaming — 150x150dp each -->
+                <LinearLayout
+                    android:id="@+id/layoutTwoCol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <!-- VR Cinema Card: 150x150dp, border-radius 20dp -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardVrCinema"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:stateListAnimator="@animator/home_card_feedback"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#0D101E">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/ivCinemaBackground"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/bg_card_vr_cinema"
+                                android:importantForAccessibility="no" />
+
+                            <!-- Bottom dark scrim -->
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="70dp"
+                                android:layout_gravity="bottom"
+                                android:background="@drawable/bg_scrim_bottom_card" />
+
+                            <!-- Label: "VR Cinema" Play Bold 16sp + 20x20dp Arrow Circle -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/playbold"
+                                    android:text="VR Cinema"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="16sp" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:background="@drawable/bg_circle_glass"
+                                    android:padding="5dp"
+                                    android:src="@drawable/ic_arrow_right_small" />
+                            </LinearLayout>
+
+                        </FrameLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- VR Gaming Card: 150x150dp, border-radius 20dp -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardVrGaming"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:stateListAnimator="@animator/home_card_feedback"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#0D101E">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/ivGamingBackground"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/bg_card_vr_gaming"
+                                android:importantForAccessibility="no" />
+
+                            <!-- Bottom dark scrim -->
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="70dp"
+                                android:layout_gravity="bottom"
+                                android:background="@drawable/bg_scrim_bottom_card" />
+
+                            <!-- Label: "VR Gaming" Play Bold 16sp + 20x20dp Arrow Circle -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/playbold"
+                                    android:text="VR Gaming"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="16sp" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:background="@drawable/bg_circle_glass"
+                                    android:padding="5dp"
+                                    android:src="@drawable/ic_arrow_right_small" />
+                            </LinearLayout>
+
+                        </FrameLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <!-- 3. Personal Media in VR Card — 320x120dp, border-radius 20dp -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/personalmedia"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:stateListAnimator="@animator/home_card_feedback"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#1B1A1D">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ivPersonalMediaBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bg_card_personal_media"
+                        android:importantForAccessibility="no" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_home_wide_scrim"
+                        android:importantForAccessibility="no" />
+
+                    <!-- Left Content: "Personal Media in VR" Play Bold 18sp + "Watch Now" -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/playbold"
+                            android:text="Personal Media\nin VR"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:lineSpacingExtra="2dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/bg_glass_pill"
+                            android:fontFamily="@font/playbold"
+                            android:gravity="center"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            android:text="Watch Now"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 4. Trending Reels Card — 320x120dp, border-radius 20dp -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardReels"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:stateListAnimator="@animator/home_card_feedback"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#1B1A1D">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ivReelsBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bg_card_trending_reels"
+                        android:importantForAccessibility="no" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_home_wide_scrim"
+                        android:importantForAccessibility="no" />
+
+                    <!-- Left Content: "Trending Reels" Play Bold 18sp + "Watch Now" -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/playbold"
+                            android:text="Trending\nReels"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:lineSpacingExtra="2dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/bg_glass_pill"
+                            android:fontFamily="@font/playbold"
+                            android:gravity="center"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            android:text="Watch Now"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Banner Ad (sits above bottomNavDock) -->
+    <include
+        android:id="@+id/bannerAd"
+        layout="@layout/layout_collapsible_banner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavDock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <include
+        android:id="@+id/bottomNavDock"
+        layout="@layout/layout_bottom_nav_dock"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

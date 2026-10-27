@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/all_corener_round"
+    android:backgroundTint="@color/colorBlue"
+    android:padding="4dp">
+
+
+    <RelativeLayout
+        android:id="@+id/rlImageApp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/all_corener_round"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:id="@+id/image_app"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="fitXY"
+
+            />
+
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:id="@+id/title"
+        style="Custom Notification Text"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:text="Ad"
+        android:visibility="invisible"
+        android:textColor="@color/white"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/titlePlaceName"
+        style="Custom Notification Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_toStartOf="@id/title"
+        android:layout_toEndOf="@+id/rlImageApp"
+        android:text="title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text"
+        style="Custom Notification Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titlePlaceName"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_toStartOf="@id/title"
+        android:layout_toEndOf="@+id/rlImageApp"
+        android:layout_toRightOf="@+id/rlImageApp"
+        android:ellipsize="end"
+        android:lines="3"
+        android:maxLines="3"
+        android:text="text"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+
+</RelativeLayout>

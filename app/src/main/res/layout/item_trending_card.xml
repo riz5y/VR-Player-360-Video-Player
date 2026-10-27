@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardTrending"
+    android:layout_width="130dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="10dp"
+    app:cardCornerRadius="14dp"
+    app:strokeWidth="0dp"
+
+    app:cardElevation="6dp"
+    app:cardBackgroundColor="@color/card_bg">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+
+        <!-- Thumbnail -->
+        <ImageView
+            android:id="@+id/imgTrendingThumb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside" />
+
+        <!-- Dark gradient overlay at bottom -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/gradient_bottom_dark" />
+
+        <!-- 360° badge - top right -->
+        <!-- 360 Badge -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_margin="10dp"
+            android:text="360"
+            android:textColor="@color/white"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_360_badge"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp" />
+        <!-- Video title - bottom left -->
+        <TextView
+            android:id="@+id/tvTrendingTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/playregular"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <!-- Yellow play button - bottom right -->
+        <ImageView
+            android:id="@+id/btnPlay"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="8dp"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/ic_play_arrow"
+              />
+
+        <ProgressBar
+            android:id="@+id/thumbLoader"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:indeterminateTint="@color/white" />
+
+    </FrameLayout>
+
+</com.google.android.material.card.MaterialCardView>

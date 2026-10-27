@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <!-- Uncompleted circle fill color -->
+    <solid android:color="#2A2A2E" />
+
+    <!-- Optional subtle border line -->
+    <stroke
+        android:width="1dp"
+        android:color="#44444C" />
+
+    <!-- Default sizing dimensions -->
+    <size
+        android:width="36dp"
+        android:height="36dp" />
+</shape>

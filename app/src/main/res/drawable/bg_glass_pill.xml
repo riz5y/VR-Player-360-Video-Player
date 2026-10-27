@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: background: rgba(255, 255, 255, 0.31); border-radius: 30px -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#4FFFFFFF" />
+    <corners android:radius="30dp" />
+</shape>

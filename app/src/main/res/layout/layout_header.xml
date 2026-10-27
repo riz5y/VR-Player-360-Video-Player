@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingTop="14dp"
+    android:paddingBottom="10dp"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:id="@+id/ivAppIcon"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/app_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- App Title (Play Bold) -->
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/playbold"
+        android:maxLines="1"
+        android:text="VR PLAYER"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@+id/layoutHeaderActions"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/ivAppIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Right Actions Container (Settings + Pro matching SS1) -->
+    <LinearLayout
+        android:id="@+id/layoutHeaderActions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Legacy Streak Button Container -->
+        <FrameLayout
+            android:id="@+id/btnStreakContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+            <ImageView
+                android:id="@+id/streakBtn"
+                android:layout_width="36dp"
+                android:layout_height="24dp"
+                android:src="@drawable/streak" />
+        </FrameLayout>
+
+        <!-- Settings Gear Icon (24x23dp matching Group 1836) -->
+        <FrameLayout
+            android:id="@+id/btnMenuContainer"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:contentDescription="Settings"
+                android:src="@drawable/ic_settings_gear" />
+        </FrameLayout>
+
+        <!-- PRO Gold Pill Badge (Group 1826: 70x25dp matching Figma CSS) -->
+        <FrameLayout
+            android:id="@+id/btnProContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:minWidth="74dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:id="@+id/imgPro"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:minWidth="74dp"
+                android:background="@drawable/bg_pro_badge"
+                android:contentDescription="PRO membership"
+                android:drawableStart="@drawable/ic_pro_crown"
+                android:drawablePadding="4dp"
+                android:drawableTint="#FF241900"
+                android:fontFamily="@font/playbold"
+                android:gravity="center"
+                android:paddingStart="7dp"
+                android:paddingEnd="7dp"
+                android:text="PRO"
+                android:textColor="#FF241900"
+                android:textSize="14sp" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

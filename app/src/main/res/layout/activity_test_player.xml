@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212">
+
+    <!-- Regular Flat ExoPlayer Layout view adjusted to render transparency layers properly -->
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/testPlayerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        app:shutter_background_color="@android:color/transparent"
+        app:surface_type="texture_view"
+        app:keep_content_on_player_reset="true"
+        app:use_controller="false" />
+
+    <!-- Dual Ring Look Center Indicator Layers Layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:gravity="center"
+        android:clickable="false"
+        android:focusable="false"
+        android:elevation="4dp"> <!-- Added elevation layer block bounds definition -->
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:focusable="false">
+            <ProgressBar
+                android:id="@+id/gazeProgressRingLeft"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:background="@drawable/reticle_dot_target"
+                android:progressDrawable="@drawable/circular_progress_countdown"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:focusable="false">
+            <ProgressBar
+                android:id="@+id/gazeProgressRingRight"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:background="@drawable/reticle_dot_target"
+                android:progressDrawable="@drawable/circular_progress_countdown"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Testing Control Deck overlay panel adjusted to stay pinned to the absolute top layout layer -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#CC000000"
+        android:padding="12dp"
+        android:layout_alignParentTop="true"
+        android:elevation="5dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/tvCurrentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Video Timeline: 0s"
+            android:textColor="#FFFF00"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvGazeStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Searching environment..."
+            android:textColor="#00FFCC"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Horizontal Adjustment Controls Line -->
+        <TextView
+            android:id="@+id/tvYawValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Simulated Yaw Angle: 0°"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="8dp"/>
+        <SeekBar
+            android:id="@+id/sbYaw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"/>
+
+        <!-- Vertical Adjustment Controls Line -->
+        <TextView
+            android:id="@+id/tvPitchValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Simulated Pitch Angle: 0°"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="4dp"/>
+        <SeekBar
+            android:id="@+id/sbPitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"/>
+    </LinearLayout>
+</RelativeLayout>

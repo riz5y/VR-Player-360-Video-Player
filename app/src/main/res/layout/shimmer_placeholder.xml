@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0E0E0">
+
+    <!-- Headline placeholder -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp">
+
+        <FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="12dp"
+            android:background="#D0D0D0" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="#D0D0D0" />
+
+        <FrameLayout
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="16dp"
+            android:background="#D0D0D0" />
+    </LinearLayout>
+
+    <!-- Media placeholder -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="80dp"
+        android:background="#D0D0D0" />
+
+    <!-- CTA placeholder -->
+    <FrameLayout
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="12dp"
+        android:background="#BDBDBD" />
+
+    <!-- Shimmer overlay — this animates across the whole layout -->
+    <FrameLayout
+        android:id="@+id/shimmer_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/shimmer_view"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/shimmer_gradient" />
+    </FrameLayout>
+</FrameLayout>

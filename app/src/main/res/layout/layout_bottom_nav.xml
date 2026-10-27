@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottomNavRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/_60sdp"
+    android:background="@color/surface"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp">
+
+    <!-- ══════════ TAB 1 : CATEGORY ══════════ -->
+    <FrameLayout
+        android:id="@+id/tabCategoryContainer"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_54sdp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:id="@+id/tabCategorySelected"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_tab_selected"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="14dp"
+            android:paddingEnd="20dp"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/caticon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Category"
+                android:textColor="@android:color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- UNSELECTED icon -->
+        <ImageView
+            android:id="@+id/tabCategoryUnselected"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:padding="@dimen/_6sdp"
+            android:src="@drawable/caticonunsel"
+            android:contentDescription="Category"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <!-- ══════════ TAB 2 : DOWNLOADS ══════════ -->
+    <FrameLayout
+        android:id="@+id/tabDownloadsContainer"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_54sdp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:id="@+id/tabDownloadsSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_tab_selected"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="14dp"
+            android:paddingEnd="20dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/downselected" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Downloads"
+                android:textColor="@android:color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- UNSELECTED icon -->
+        <ImageView
+            android:id="@+id/tabDownloadsUnselected"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:padding="6dp"
+            android:src="@drawable/ic_download"
+            android:contentDescription="Downloads"
+            android:visibility="visible" />
+    </FrameLayout>
+
+    <!-- ══════════ TAB 3 : SETTING ══════════ -->
+    <FrameLayout
+        android:id="@+id/tabSettingContainer"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_54sdp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:id="@+id/tabSettingSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_tab_selected"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="14dp"
+            android:paddingEnd="20dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/settingselect" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Setting"
+                android:textColor="@android:color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- UNSELECTED icon -->
+        <ImageView
+            android:id="@+id/tabSettingUnselected"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:padding="6dp"
+            android:src="@drawable/ic_settings"
+            android:contentDescription="Setting"
+            android:visibility="visible" />
+    </FrameLayout>
+
+</LinearLayout>

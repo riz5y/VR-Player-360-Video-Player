@@ -1,0 +1,11 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- Figma: linear-gradient(180deg, rgba(27,26,29,0.11) 59%, #1B1A1D 100%) -->
+    <!-- Top is nearly transparent, only bottom edge gets dark for text legibility -->
+    <gradient
+        android:angle="270"
+        android:startColor="#001B1A1D"
+        android:centerColor="#1C1B1A1D"
+        android:endColor="#E61B1A1D" />
+    <corners android:radius="20dp" />
+</shape>

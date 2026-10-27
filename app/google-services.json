@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1011406072415",
+    "project_id": "vr-player-2",
+    "storage_bucket": "vr-player-2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011406072415:android:b368327f2b237a202909ea",
+        "android_client_info": {
+          "package_name": "com.vrplayer.videoplayer360.vrplayer360"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA42Wfx_Ts0uh4mXwk7WeuAKowdchziwOk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

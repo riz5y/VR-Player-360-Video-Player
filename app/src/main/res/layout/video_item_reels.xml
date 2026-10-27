@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:keepScreenOn="true"
+        app:repeat_toggle_modes="all"
+        app:controller_layout_id="@layout/exo_player_control_view"
+        app:use_controller="false"
+        app:resize_mode="zoom"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/thumbnailImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:elevation="5dp"
+        android:indeterminateTint="?attr/colorPrimaryContainer"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/shimmerLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/wave_layer"
+        android:elevation="@dimen/_5sdp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/playPlayerButton"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:scaleType="centerCrop"
+        android:elevation="@dimen/_5sdp"
+        android:visibility="gone"
+        android:contentDescription="@null"
+        android:src="@drawable/icon_video_play"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/playButton"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/app_name"
+        android:elevation="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/play_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toTopOf="@+id/progressBar"
+        app:tint="@color/white" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnDownload"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_120sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_20sdp"
+        android:alpha="2.7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_8sdp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_downloaded"
+            app:tint="@color/black"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvShare"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:elevation="@dimen/_5sdp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toTopOf="@id/btnDownload"
+        app:layout_constraintEnd_toEndOf="@+id/btnShare"
+        app:layout_constraintStart_toStartOf="@+id/btnShare" />
+
+    <TextView
+        android:id="@+id/tvDownload"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:elevation="@dimen/_5sdp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="@id/btnDownload"
+        app:layout_constraintStart_toStartOf="@id/btnDownload"
+        app:layout_constraintTop_toBottomOf="@id/btnDownload" />
+
+    <TextView
+        android:id="@+id/tvFavourite"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:elevation="@dimen/_5sdp"
+        android:visibility="gone"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintEnd_toEndOf="@id/btnShare"
+        app:layout_constraintStart_toStartOf="@id/btnDownload"
+        app:layout_constraintBottom_toTopOf="@id/btnShare" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnLike"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:alpha="2.7"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@+id/tvLike"
+        app:layout_constraintEnd_toEndOf="@+id/tvLike"
+        app:layout_constraintStart_toStartOf="@+id/tvLike">
+
+        <ImageView
+            android:id="@+id/ivLikeIcon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/hearticon"
+            app:tint="@color/black" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvLike"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_5sdp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+           android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@+id/btnShare"
+        app:layout_constraintEnd_toEndOf="@+id/btnShare"
+        app:layout_constraintStart_toStartOf="@+id/btnShare" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnShare"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:alpha="2.7"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@id/tvShare"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_10sdp"
+            android:contentDescription="@null"
+            android:src="@drawable/icon_share_new"
+            app:tint="@color/black" />
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cVNameVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha=".85"
+        app:cardBackgroundColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        app:strokeWidth="0dp"
+        app:cardCornerRadius="@dimen/_6sdp">
+
+        <TextView
+            android:id="@+id/tvVideoName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:includeFontPadding="false"
+            android:text="Swipe up to see another video"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            android:maxLines="2"
+            android:fontFamily="@font/playregular"
+            android:ellipsize="end"
+            android:maxWidth="@dimen/_250sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_6sdp"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cVMore"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_30sdp"
+        app:cardBackgroundColor="?attr/colorOnPrimary"
+        app:cardCornerRadius="@dimen/_14sdp"
+        android:visibility="gone"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toTopOf="@id/cVNameVideo"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:strokeColor="?attr/colorBackgroundFloating"
+        app:strokeWidth="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iVMore"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:padding="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tint="?attr/colorPrimaryContainer"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textColor="?attr/colorPrimaryContainer"
+                android:textSize="@dimen/_10ssp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintStart_toEndOf="@id/iVMore"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

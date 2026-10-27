@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    tools:context=".Detail.DetailActivity">
+
+    <!-- ══ HEADER ══ -->
+    <ImageView
+        android:id="@+id/backbtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="26dp"
+        android:src="@drawable/backbtn11"
+        android:scaleType="fitCenter"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvToolbarTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/playbold"
+        android:gravity="center"
+        android:text="Details"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/backbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backbtn" />
+
+    <!-- ══ SCROLLABLE CONTENT ══ -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/bannerAd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backbtn">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- ── HERO IMAGE inside rounded card ── -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/heroCard"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#33FFFFFF"
+                app:cardBackgroundColor="#0D101E"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/heroImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                    <!-- Bottom gradient fade -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/bg_scrim_bottom_card" />
+
+                </FrameLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── TITLE ── -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="@font/playbold"
+                android:lineSpacingMultiplier="1.1"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/heroCard"
+                tools:text="BUSCH Gardens 360 VR BOX" />
+
+            <!-- ── DURATION CLOCK ICON ── -->
+            <ImageView
+                android:id="@+id/greenDot"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/durcationicon"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDurationLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+            <!-- ── DURATION LABEL ── -->
+            <TextView
+                android:id="@+id/tvDurationLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/playbold"
+                android:text="Duration:"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/greenDot"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+            <!-- ── DURATION VALUE ── -->
+            <TextView
+                android:id="@+id/tvDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:fontFamily="@font/playregular"
+                android:textColor="#C1B3B3"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDurationLabel"
+                app:layout_constraintStart_toEndOf="@+id/tvDurationLabel"
+                app:layout_constraintTop_toTopOf="@+id/tvDurationLabel"
+                tools:text="2m 15s" />
+
+            <!-- ── DESCRIPTION ── -->
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="4dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/playregular"
+                android:lineSpacingMultiplier="1.2"
+                android:maxLines="1"
+                android:textColor="#E8E8E8"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/tvSeeMore"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDurationLabel"
+                tools:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout." />
+
+            <!-- ── SEE MORE ── -->
+            <TextView
+                android:id="@+id/tvSeeMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/playbold"
+                android:text="See More"
+                android:textColor="#3C8CEF"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvDescription"
+                app:layout_constraintTop_toTopOf="@+id/tvDescription" />
+
+            <!-- Divider between interaction modes and repeat options -->
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="20dp"
+                android:background="#4FFFFFFF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chipBoth" />
+
+            <!-- ── MODES LABEL ── -->
+            <TextView
+                android:id="@+id/tvModesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="38dp"
+                android:fontFamily="@font/playbold"
+                android:text="Modes:"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSeeMore" />
+
+            <!-- ── MOTION CHIP ── -->
+            <TextView
+                android:id="@+id/chipMotion"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/bg_chip_selected"
+                android:fontFamily="@font/playregular"
+                android:gravity="center"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:text="Motion"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:contentDescription="Motion control mode"
+                app:layout_constraintBottom_toBottomOf="@+id/tvModesLabel"
+                app:layout_constraintStart_toEndOf="@+id/tvModesLabel"
+                app:layout_constraintTop_toTopOf="@+id/tvModesLabel" />
+
+            <!-- ── TOUCH CHIP ── -->
+            <TextView
+                android:id="@+id/chipTouch"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/bg_chip_unselected"
+                android:fontFamily="@font/playregular"
+                android:gravity="center"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:text="Touch"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:contentDescription="Touch control mode"
+                app:layout_constraintBottom_toBottomOf="@+id/tvModesLabel"
+                app:layout_constraintStart_toEndOf="@+id/chipMotion"
+                app:layout_constraintTop_toTopOf="@+id/tvModesLabel" />
+
+            <!-- ── BOTH CHIP ── -->
+            <TextView
+                android:id="@+id/chipBoth"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/bg_chip_unselected"
+                android:fontFamily="@font/playregular"
+                android:gravity="center"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:text="Both"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:contentDescription="Motion and touch control mode"
+                app:layout_constraintBottom_toBottomOf="@+id/tvModesLabel"
+                app:layout_constraintStart_toEndOf="@+id/chipTouch"
+                app:layout_constraintTop_toTopOf="@+id/tvModesLabel" />
+
+            <!-- Divider between repeat options and playback modes -->
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="20dp"
+                android:background="#4FFFFFFF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rbExitOnFinish" />
+
+            <!-- ── REPEAT MODE LABEL ── -->
+            <TextView
+                android:id="@+id/tvRepeatModeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/playbold"
+                android:text="Repeat Mode:"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+            <!-- ── REPEAT RADIO ── -->
+            <RadioButton
+                android:id="@+id/rbRepeat"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:minHeight="0dp"
+                android:layout_marginStart="20dp"
+                android:buttonTint="@color/white"
+                android:fontFamily="@font/playregular"
+                android:text="Repeat"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:contentDescription="Repeat video"
+                app:layout_constraintBottom_toBottomOf="@+id/tvRepeatModeLabel"
+                app:layout_constraintStart_toEndOf="@+id/tvRepeatModeLabel"
+                app:layout_constraintTop_toTopOf="@+id/tvRepeatModeLabel" />
+
+            <!-- ── EXIT WHEN COMPLETE RADIO ── -->
+            <RadioButton
+                android:id="@+id/rbExitOnFinish"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:minHeight="0dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="20dp"
+                android:buttonTint="@color/white"
+                android:fontFamily="@font/playregular"
+                android:text="Exit when complete"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:contentDescription="Exit when video completes"
+                app:layout_constraintBottom_toBottomOf="@+id/tvRepeatModeLabel"
+                app:layout_constraintStart_toEndOf="@+id/rbRepeat"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvRepeatModeLabel" />
+
+            <!-- ── PLAY AS LABEL ── -->
+            <TextView
+                android:id="@+id/tvPlayAsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/playbold"
+                android:letterSpacing="0.08"
+                android:text="PLAY AS:"
+                android:textColor="#DAE639"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+            <!-- ── PLAY AS 2x2 GRID ── -->
+            <!-- Row 1: SBS and Cardboard -->
+            <FrameLayout
+                android:id="@+id/icSbs"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/iccardboard"
+                app:layout_constraintTop_toBottomOf="@+id/tvPlayAsLabel"
+                android:contentDescription="Play in split-screen VR"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="30dp"
+                    android:background="@drawable/bg_mode_pill"
+                    android:fontFamily="@font/playbold"
+                    android:gravity="center_vertical"
+                    android:paddingStart="40dp"
+                    android:text="SBS"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/bg_mode_circle"
+                    android:importantForAccessibility="no"
+                    android:padding="13dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_mode_sbs" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/iccardboard"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintStart_toEndOf="@+id/icSbs"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/icSbs"
+                app:layout_constraintBottom_toBottomOf="@+id/icSbs"
+                android:contentDescription="Play in cardboard VR"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="30dp"
+                    android:background="@drawable/bg_mode_pill"
+                    android:fontFamily="@font/playbold"
+                    android:gravity="center_vertical"
+                    android:paddingStart="40dp"
+                    android:text="Cardboard"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/bg_mode_circle"
+                    android:importantForAccessibility="no"
+                    android:padding="13dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_mode_cardboard" />
+            </FrameLayout>
+
+            <!-- Row 2: On Device and Panoramic -->
+            <FrameLayout
+                android:id="@+id/ondevice"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/panoramic"
+                app:layout_constraintTop_toBottomOf="@+id/icSbs"
+                android:contentDescription="Play on device"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="30dp"
+                    android:background="@drawable/bg_mode_pill"
+                    android:fontFamily="@font/playbold"
+                    android:gravity="center_vertical"
+                    android:paddingStart="40dp"
+                    android:text="On Device"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/bg_mode_circle"
+                    android:importantForAccessibility="no"
+                    android:padding="13dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_mode_device" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/panoramic"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintStart_toEndOf="@+id/ondevice"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ondevice"
+                app:layout_constraintBottom_toBottomOf="@+id/ondevice"
+                android:contentDescription="Play in panoramic mode"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="30dp"
+                    android:background="@drawable/bg_mode_pill"
+                    android:fontFamily="@font/playbold"
+                    android:gravity="center_vertical"
+                    android:paddingStart="40dp"
+                    android:text="Panoramic"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/bg_mode_circle"
+                    android:importantForAccessibility="no"
+                    android:padding="13dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_mode_panoramic" />
+            </FrameLayout>
+
+            <!-- Kept for backward compatibility but hidden to match design -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/downloadBtn"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_continue_pop"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ondevice">
+
+                <ImageView
+                    android:id="@+id/icDownload"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_header_download"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvDownload"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/tvDownload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/playbold"
+                    android:text="Download Video"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/icDownload"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/bannerAd"
+        layout="@layout/bannar_layout_shimmer"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

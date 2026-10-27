@@ -1,0 +1,15 @@
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="together">
+    <objectAnimator
+        android:duration="90"
+        android:propertyName="scaleX"
+        android:valueFrom="1"
+        android:valueTo="0.985"
+        android:valueType="floatType" />
+    <objectAnimator
+        android:duration="90"
+        android:propertyName="scaleY"
+        android:valueFrom="1"
+        android:valueTo="0.985"
+        android:valueType="floatType" />
+</set>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+
+    <!-- VR Headset body -->
+    <path
+        android:fillColor="#DAE639"
+        android:pathData="M18,34 C18,28 22,24 28,24 L68,24 C74,24 78,28 78,34 L78,58 C78,64 74,68 68,68 L60,68 C58,68 56,66 54,64 L52,62 C51,61 50,60 48,60 C46,60 45,61 44,62 L42,64 C40,66 38,68 36,68 L28,68 C22,68 18,64 18,58 Z" />
+
+    <!-- Left strap -->
+    <path
+        android:fillColor="#B8CC00"
+        android:pathData="M4,42 C4,40 6,38 8,38 L18,38 L18,50 L8,50 C6,50 4,48 4,46 Z" />
+
+    <!-- Right strap -->
+    <path
+        android:fillColor="#B8CC00"
+        android:pathData="M78,38 L88,38 C90,38 92,40 92,42 L92,46 C92,48 90,50 88,50 L78,50 Z" />
+
+    <!-- Left lens outer -->
+    <path
+        android:fillColor="#0A0816"
+        android:pathData="M23,46 C23,40.48 27.48,36 33,36 C38.52,36 43,40.48 43,46 C43,51.52 38.52,56 33,56 C27.48,56 23,51.52 23,46 Z" />
+
+    <!-- Left lens mid -->
+    <path
+        android:fillColor="#1A2A5E"
+        android:pathData="M26,46 C26,42.13 29.13,39 33,39 C36.87,39 40,42.13 40,46 C40,49.87 36.87,53 33,53 C29.13,53 26,49.87 26,46 Z" />
+
+    <!-- Left lens inner -->
+    <path
+        android:fillColor="#2A4A9E"
+        android:pathData="M29,46 C29,43.79 30.79,42 33,42 C35.21,42 37,43.79 37,46 C37,48.21 35.21,50 33,50 C30.79,50 29,48.21 29,46 Z" />
+
+    <!-- Right lens outer -->
+    <path
+        android:fillColor="#0A0816"
+        android:pathData="M53,46 C53,40.48 57.48,36 63,36 C68.52,36 73,40.48 73,46 C73,51.52 68.52,56 63,56 C57.48,56 53,51.52 53,46 Z" />
+
+    <!-- Right lens mid -->
+    <path
+        android:fillColor="#1A2A5E"
+        android:pathData="M56,46 C56,42.13 59.13,39 63,39 C66.87,39 70,42.13 70,46 C70,49.87 66.87,53 63,53 C59.13,53 56,49.87 56,46 Z" />
+
+    <!-- Right lens inner -->
+    <path
+        android:fillColor="#2A4A9E"
+        android:pathData="M59,46 C59,43.79 60.79,42 63,42 C65.21,42 67,43.79 67,46 C67,48.21 65.21,50 63,50 C60.79,50 59,48.21 59,46 Z" />
+
+    <!-- Nose bridge -->
+    <path
+        android:fillColor="#0A0816"
+        android:pathData="M43,43 L53,43 C54.1,43 55,44.34 55,46 C55,47.66 54.1,49 53,49 L43,49 C41.9,49 41,47.66 41,46 C41,44.34 41.9,43 43,43 Z" />
+
+    <!-- Left lens shine -->
+    <path
+        android:fillColor="#4466CC"
+        android:pathData="M29,42 C29,40.9 29.9,40 31,40 C32.1,40 33,40.9 33,42 C33,43.1 32.1,44 31,44 C29.9,44 29,43.1 29,42 Z" />
+
+    <!-- Right lens shine -->
+    <path
+        android:fillColor="#4466CC"
+        android:pathData="M59,42 C59,40.9 59.9,40 61,40 C62.1,40 63,40.9 63,42 C63,43.1 62.1,44 61,44 C59.9,44 59,43.1 59,42 Z" />
+
+</vector>

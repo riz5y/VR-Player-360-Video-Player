@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0816">
+
+    <!-- Hero image (top 42%) -->
+    <ImageView
+        android:id="@+id/paywallBackgroundImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/paywall_hero_b"
+        android:layout_marginTop="28dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Fade hero into content -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_paywall_fade"
+        app:layout_constraintBottom_toBottomOf="@+id/paywallBackgroundImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Top fade so the lowered image blends under the status bar -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:background="@drawable/bg_paywall_top_fade"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Close button -->
+    <ImageView
+        android:id="@+id/cross"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/ic_cancel_circle"
+        android:padding="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Close"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Guideline at 40% of screen height -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.40" />
+
+    <!-- Scrollable content below hero -->
+    <FrameLayout
+        android:id="@+id/scrollContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="12dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nicomojiregular"
+                android:text="Premium Plans"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <!-- Feature checklist — 2 columns -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+                <!-- Left column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:layout_marginBottom="8dp">
+                        <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/whiittetick" app:tint="#FFFFFF" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:text="Access All Features" android:textColor="#FFFFFF" android:textSize="11sp" android:fontFamily="@font/montserratmedium"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:layout_marginBottom="8dp">
+                        <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/whiittetick" app:tint="#FFFFFF" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:text="Remove Ads" android:textColor="#FFFFFF" android:textSize="11sp" android:fontFamily="@font/montserratmedium"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                        <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/whiittetick" app:tint="#FFFFFF" />
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="6dp" android:text="Unlock Roller Coaster &amp; Jurassic Park Videos" android:textColor="#FFFFFF" android:textSize="11sp" android:fontFamily="@font/montserratmedium"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Right column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:layout_marginBottom="8dp">
+                        <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/whiittetick" app:tint="#FFFFFF" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:text="Unlimited Downloads" android:textColor="#FFFFFF" android:textSize="11sp" android:fontFamily="@font/montserratmedium"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                        <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/whiittetick" app:tint="#FFFFFF" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:text="Better Performance" android:textColor="#FFFFFF" android:textSize="11sp" android:fontFamily="@font/montserratmedium"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Monthly plan card (Popular) -->
+            <FrameLayout
+                android:id="@+id/monthly"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_plan_card_blue_border"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_marginStart="16dp"
+                    android:text="Monthly"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/montserratbold" />
+
+                <TextView
+                    android:id="@+id/titleMonthlyPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="16dp"
+                    android:text="Rs 1,700"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/montserratmedium" />
+
+                <!-- Popular badge (top-right corner) -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_gravity="top|end"
+                    android:background="@drawable/bg_popular_badge"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:text="Popular"
+                    android:textColor="#FFFFFF"
+                    android:textSize="8sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserratmedium" />
+            </FrameLayout>
+
+            <!-- One Time Purchase card (Save 55%) -->
+            <FrameLayout
+                android:id="@+id/lifeTime"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_plan_card_blue_border"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_marginStart="16dp"
+                    android:text="One Time Purchase"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/montserratbold" />
+
+                <TextView
+                    android:id="@+id/lifeTimePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="16dp"
+                    android:text="Rs 2,800"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/montserratmedium" />
+
+                <!-- Save 55% badge (top-right corner, yellow) -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_gravity="top|end"
+                    android:background="@drawable/bg_save_badge_yellow"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:text="Save 55%"
+                    android:textColor="#0A0816"
+                    android:textSize="8sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserratmedium" />
+            </FrameLayout>
+
+            <!-- Hidden weekly plan compat view -->
+            <View
+                android:id="@+id/weeklyPlan"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone" />
+
+            <!-- Weekly price footnote -->
+            <TextView
+                android:id="@+id/weekly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="14dp"
+                android:text="Rs 500 /Weekly"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:fontFamily="@font/montserratbold"
+                android:gravity="center" />
+            <!-- Disclaimer -->
+            <TextView android:id="@+id/mainText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Subscription renews automatically every Week. you can cancel anytime from google play."
+                android:textColor="#B3FFFFFF"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:fontFamily="@font/montserratmedium" />
+
+            <!-- CTA Button -->
+            <TextView
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_continue_pop"
+                android:gravity="center"
+                android:text="Continue"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:fontFamily="@font/montserratbold"
+                android:clickable="true"
+                android:focusable="true" />
+
+
+
+            <!-- Cancel anytime link -->
+            <TextView android:visibility="gone" android:id="@+id/restoreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="6dp"
+                android:text="Cancel anytime"
+                android:textColor="#3C8CEF"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:fontFamily="@font/montserratmedium"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

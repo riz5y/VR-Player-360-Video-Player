@@ -1,0 +1,80 @@
+<!-- res/layout/dialog_streak_progress.xml -->
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_streak_banner"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp">
+    <ImageView
+xmlns:app="http://schemas.android.com/apk/res-auto"         android:id="@+id/closebtn"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:src="@drawable/ic_cancel_circle"
+        app:tint="#30343B"
+        android:padding="3dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Close"
+        android:layout_gravity="end"/>
+    <ImageView
+xmlns:app="http://schemas.android.com/apk/res-auto"         android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:src="@drawable/streak"
+        android:contentDescription="@null" />
+    <!-- Title row -->
+    <TextView
+xmlns:app="http://schemas.android.com/apk/res-auto"         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your VR habit, rewarded"
+        android:textColor="#17191D"
+        android:textSize="18sp"
+        android:fontFamily="@font/playbold"
+        android:layout_marginTop="@dimen/_10sdp" />
+
+    <!-- Subtitle -->
+    <TextView
+xmlns:app="http://schemas.android.com/apk/res-auto"         android:id="@+id/tvStreakSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="@font/playregular"
+        android:text="Open VR Player 3 days in a row to unlock\n7 days of VIP and an ad-free experience."
+        android:textColor="#4B5563"
+        android:textSize="13sp" />
+
+    <!-- Day dots row -->
+    <LinearLayout
+xmlns:app="http://schemas.android.com/apk/res-auto"         android:id="@+id/llDayDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:orientation="horizontal" />
+
+    <!-- Progress bar -->
+    <ProgressBar
+xmlns:app="http://schemas.android.com/apk/res-auto"         android:id="@+id/streakProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginTop="12dp"
+        android:max="3"
+        android:progress="1"
+        android:progressBackgroundTint="#E1E3E6"
+        android:progressTint="@color/accent_gold" />
+
+
+    <!-- Close button -->
+    <Button
+xmlns:app="http://schemas.android.com/apk/res-auto"         android:id="@+id/btnStreakClose"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/accent_gold"
+        android:text="Come back tomorrow"
+        android:textColor="#0A0816"
+        android:textSize="14sp"
+        android:fontFamily="@font/playbold"
+        android:textAllCaps="false" />
+</LinearLayout>
